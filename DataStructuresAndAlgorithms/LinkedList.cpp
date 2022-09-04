@@ -1,3 +1,5 @@
+#include<stdio.h>
+#include<iostream>
 struct node 
 {
 	int data;
@@ -9,8 +11,30 @@ class LinkedList
  private:
 	node* pHead;
  public:
-	 void addElementFirst(node q);
-	 void addElemnetEnd(node q);
+	 void addElementFirst(int data);
+	 void addElemnetEnd(int data);
 	 void display();
-	 void searchNode(node x);
+	 void searchNode(int data);
 };
+
+
+void LinkedList::display()
+{
+	while (pHead != nullptr)
+	{
+		std::cout << pHead->data;
+		pHead = pHead->next;
+	}
+}
+void LinkedList::addElementFirst(int data)
+{
+	node* tmp = new node;
+	tmp->data = data;
+	tmp->next = pHead;
+	pHead = tmp;
+
+}
+int main()
+{
+	return 0;
+}
